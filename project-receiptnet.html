@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReceiptNet - Edison Guo</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="project-page">
+
+  <main>
+
+    <div class="main-content">
+
+      <article class="active">
+
+        <a href="./index.html#portfolio" class="project-back-link">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          <span>Back to portfolio</span>
+        </a>
+
+        <header>
+          <h2 class="h2 article-title">ReceiptNet: Automating Expense Tracking with a Spatial-Textual LSTM</h2>
+        </header>
+
+        <p class="project-meta">Team Project · MIE1517, University of Toronto</p>
+
+        <figure class="project-page-img">
+          <img src="./assets/images/receipt-pipeline.png"
+            alt="Pipeline diagram: receipt photo, CRAFT text detection, bounding boxes, Tesseract OCR, then an LSTM that labels each line">
+        </figure>
+
+        <section class="project-section">
+          <h3 class="h3">Overview</h3>
+
+          <p class="timeline-text">
+            Built an end-to-end deep learning pipeline that reads a photo of a receipt and pulls out the fields needed
+            for expense tracking: store name, date, total, and tax. Receipts vary widely in layout and OCR introduces
+            character errors, so the pipeline combines text detection, OCR, and a sequence model that uses both what
+            each line says and where it sits on the receipt.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">What we built</h3>
+
+          <ul class="timeline-text timeline-bullets">
+            <li>Trained and evaluated on 11,872 receipt images: 1,872 real and 10,000 synthetic.</li>
+            <li>Detected text regions with the CRAFT model and read them with Tesseract OCR, producing the text and
+              bounding box for each region.</li>
+            <li>Classified each line with a spatial-textual LSTM that combines the text with its position, labelling
+              lines as store name, date, total, tax, subtotal, item name, item price, or other.</li>
+            <li>Compared EasyOCR and Tesseract, and chose Tesseract because it reads special characters ($, %, :, /, #)
+              more reliably. These characters are what separate prices, dates, and times on a receipt.</li>
+            <li>Switched from word-level to line-level input, so the model sees a label like "TOTAL" together with its
+              value instead of classifying each word in isolation.</li>
+            <li>Reached about 73% validation accuracy and 74% macro F1 over 50 epochs with no severe overfitting. Tax
+              and total amount had the highest F1 scores of the key fields.</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Results</h3>
+
+          <figure class="project-page-img">
+            <img src="./assets/images/receipt-ocr.png"
+              alt="A receipt with CRAFT's detected text boxes on the left and Tesseract's recognized text on the right">
+          </figure>
+
+          <p class="timeline-text project-caption">
+            CRAFT detection (left) and Tesseract recognition (right) on a sample receipt, with 103 text regions found.
+          </p>
+
+          <figure class="project-page-img">
+            <img src="./assets/images/receipt-training.png"
+              alt="Four training charts: loss, accuracy, macro F1, and F1 for total amount, tax, date, and store name over 50 epochs">
+          </figure>
+
+          <p class="timeline-text project-caption">
+            Training and validation loss, accuracy, and macro F1, plus F1 for the key fields over 50 epochs.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Lessons learned</h3>
+
+          <ul class="timeline-text timeline-bullets">
+            <li><strong>The choice of OCR matters.</strong> OCR errors become model errors, so a weaker OCR engine
+              costs accuracy downstream.</li>
+            <li><strong>Don't classify words in isolation.</strong> Receipts encode meaning through structure, so
+              line-level context works better than token-level context.</li>
+            <li><strong>Labeling strategy affects accuracy.</strong> Automatic OCR labeling is fast but carries OCR
+              mistakes into training. Auto-labeling with human correction gives cleaner data, and high-quality data
+              beats more data.</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Tools</h3>
+
+          <p class="timeline-text">Python, Google Colab, CRAFT text detection, Tesseract OCR, LSTM</p>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

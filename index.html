@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/edison-memoji.png" alt="Edison Guo" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Edison Guo">Edison Guo</h1>
+
+          <p class="title">Mechanical Engineer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:edisonguo1924@gmail.com" class="contact-link">edisonguo1924@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+17789795476" class="contact-link">+1 (778) 979-5476</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="2001-12-24">December 24, 2001</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Toronto, Ontario, Canada</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am currently a Mechanical and Industrial Engineering graduate student at the University of Toronto.
+          </p>
+
+          <p>
+            Positioned at the crossroads of machine learning, financial engineering, and autonomous systems. My
+            background spans the full spectrum, from precision mechanical design and robotics to deep learning and
+            quantitative analysis. These experiences have given me a rare ability to see both the hardware and the
+            data, and to engineer solutions that seamlessly connect the two.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <!--
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web design</h4>
+
+                <p class="service-item-text">
+                  The most modern and high-quality design made at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
+
+                <p class="service-item-text">
+                  Professional development of applications for iOS and Android.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Photography</h4>
+
+                <p class="service-item-text">
+                  I make high-quality photos of any category at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+        -->
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">University of Toronto — Master of Engineering in Mechanical and Industrial Engineering</h4>
+
+              <span>Graduated September 2026</span>
+
+              <p class="timeline-text">
+                Emphases: Data Analytics and Machine Learning; Entrepreneurship, Leadership, Innovation and Technology in
+                Engineering (ELITE).
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">University of Toronto — Bachelor of Applied Science in Mechanical Engineering</h4>
+
+              <span>Graduated May 2025</span>
+
+              <p class="timeline-text">
+                Specialization: Manufacturing and Mechatronics. Minor: Engineering Business and Advanced Manufacturing.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Mechanical Team Lead — University of Toronto Self-Driving Team (aUToronto)</h4>
+
+              <span>July 2024 — June 2025 · Toronto, ON</span>
+
+              <ul class="timeline-text timeline-bullets">
+                <li>Designed 3D mechanical assemblies in SolidWorks and manufactured supporting hardware, including PCB
+                  mounts and router enclosures, improving vehicle performance and reliability.</li>
+                <li>Designed, prototyped, and built an electro-mechanical control box that interfaces with test traffic
+                  lights via remote control, supporting autonomous vehicle testing.</li>
+              </ul>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Mechanical Engineering Intern — Magna Electronics Inc.</h4>
+
+              <span>May 2023 — May 2024 · Markham, ON</span>
+
+              <ul class="timeline-text timeline-bullets">
+                <li><strong>Fixture Design &amp; Inspection:</strong> Redesigned and upgraded a legacy camera-based
+                  inspection fixture, optimizing image acquisition and calibration controls to raise part inspection
+                  accuracy from 93.33% to 100%.</li>
+                <li><strong>Manufacturing &amp; Test Support:</strong> Analyzed strain test data from electro-mechanical
+                  circuit board assembly lines to guide automation enhancements, improving production reliability and
+                  process consistency.</li>
+                <li><strong>Cross-Functional Collaboration:</strong> Partnered with plant production and manufacturing
+                  teams to troubleshoot issues and implement ergonomic and procedural improvements, reducing
+                  troubleshooting time by 50%.</li>
+              </ul>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="construct-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Projects</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Maze Block Finding Robot — Mechanical Designer, University of Toronto</h4>
+
+              <span>September 2024 — December 2024 · Toronto, ON</span>
+
+              <ul class="timeline-text timeline-bullets">
+                <li>Conceptualized and designed a robotic rover that autonomously navigates a maze, picks up a 0.5 lb
+                  wood block at the loading zone, and delivers it to designated locations.</li>
+                <li>Designed a high-precision gripping mechanism in SolidWorks, achieving a 100% block pickup success
+                  rate across varied operating conditions.</li>
+                <li>Designed and optimized structural components (base plate, cover, component mounts, and drivetrain
+                  layout) for manufacturability, balanced weight distribution, and operational stability.</li>
+              </ul>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">TMC ICS Panel Troubleshooting Fixture — Designer</h4>
+
+              <span>December 2023 — May 2024 · Markham, ON</span>
+
+              <ul class="timeline-text timeline-bullets">
+                <li>Designed and developed a panel-level debug fixture with power and CAN bus attachments, enabling
+                  debugging of individual daughter boards while still in panel form.</li>
+                <li>Engineered dedicated daughter board and motherboard fixtures, enabling independent testing and
+                  diagnostics of each daughter board.</li>
+                <li>Optimized the troubleshooting workflow, reducing troubleshooting time by 50% and improving process
+                  efficiency.</li>
+              </ul>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Tools</h5>
+              </div>
+              <p class="timeline-text">SolidWorks (CSWA certified), CATIA, ANSYS, MS Office, PLC, Python, MATLAB</p>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Manufacturing</h5>
+              </div>
+              <p class="timeline-text">CNC Milling, Sheet Metal Fabrication, 3D Printing</p>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Certifications</h5>
+              </div>
+              <p class="timeline-text">Certified SOLIDWORKS Associate (CSWA) in Mechanical Design — June 2021</p>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Languages</h5>
+              </div>
+              <p class="timeline-text">Fluent in English and Mandarin Chinese</p>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Robotics</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Mechanical design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Deep learning</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Finance</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Robotics</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Mechanical design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Deep learning</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Finance</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="robotics">
+              <a href="./project-maze-robot.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/maze-robot-render.png" alt="Maze Finding Robot CAD render" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Maze Finding Robot</h3>
+
+                <p class="project-category">Robotics</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="mechanical design">
+              <a href="./project-corner-seal.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/corner-seal-render.png" alt="On-frame Corner Seal CAD render" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">On-frame Corner Seal</h3>
+
+                <p class="project-category">Mechanical design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="mechanical design">
+              <a href="./project-cnc-mill.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/cnc-mill-render.png" alt="Desktop CNC Milling Machine CAD render" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Desktop CNC Milling Machine</h3>
+
+                <p class="project-category">Mechanical design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="mechanical design">
+              <a href="./project-caster-assembly.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/caster-line-render.png" alt="Chair Caster Assembly System CAD render" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Chair Caster Assembly System</h3>
+
+                <p class="project-category">Mechanical design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="mechanical design">
+              <a href="./project-part-designs.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/part-motor-arm.png" alt="Motor arm CAD render" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Part Designs</h3>
+
+                <p class="project-category">Mechanical design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="deep learning">
+              <a href="./project-receiptnet.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/receipt-pipeline.png" alt="ReceiptNet pipeline diagram" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">ReceiptNet</h3>
+
+                <p class="project-category">Deep learning</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="finance">
+              <a href="./project-portfolio-optimization.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/portfolio-frontier-8asset.png" alt="Eight-asset efficient frontier chart" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Portfolio Optimization</h3>
+
+                <p class="project-category">Finance</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="finance">
+              <a href="./project-bitcoin-forecasting.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/btc-model-comparison.png" alt="Model comparison chart" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Bitcoin Price Forecasting</h3>
+
+                <p class="project-category">Finance</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="finance">
+              <a href="./project-option-pricing.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/options-mc-paths.png" alt="Monte Carlo stock price paths chart" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Option Pricing</h3>
+
+                <p class="project-category">Finance</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="finance">
+              <a href="./project-portfolio-backtest.html">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/etf-wealth-12m.png" alt="Cumulative wealth chart for portfolio strategies" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Portfolio Strategy Backtest</h3>
+
+                <p class="project-category">Finance</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://maps.google.com/maps?q=Toronto,%20ON,%20Canada&z=11&output=embed"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Connect with Me</h3>
+
+          <a href="https://www.linkedin.com/in/edison-guo/" target="_blank" rel="noopener noreferrer" class="form-btn">
+            <ion-icon name="logo-linkedin"></ion-icon>
+            <span>Connect on LinkedIn</span>
+          </a>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

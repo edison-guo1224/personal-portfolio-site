@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Option Pricing - Edison Guo</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="project-page">
+
+  <main>
+
+    <div class="main-content">
+
+      <article class="active">
+
+        <a href="./index.html#portfolio" class="project-back-link">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          <span>Back to portfolio</span>
+        </a>
+
+        <header>
+          <h2 class="h2 article-title">Option Pricing with Monte Carlo Simulation</h2>
+        </header>
+
+        <p class="project-meta">Individual Project · MIE1622 Computational Finance and Risk Management, University of
+          Toronto · Winter 2026</p>
+
+        <figure class="project-page-img">
+          <img src="./assets/images/options-mc-paths.png"
+            alt="200 simulated stock price paths with knock-in paths in blue crossing the 110 barrier and knock-out paths in red crossing the 90 barrier">
+        </figure>
+
+        <section class="project-section">
+          <h3 class="h3">Overview</h3>
+
+          <p class="timeline-text">
+            Priced European and barrier options in Python by simulating one million stock price paths under Geometric
+            Brownian Motion, and checked the simulation against the closed-form Black-Scholes model. Barrier options
+            only pay off depending on whether the price crosses a set level during the option's life, so they have no
+            simple formula and need path-by-path simulation.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">What I did</h3>
+
+          <ul class="timeline-text timeline-bullets">
+            <li>Implemented four pricers: closed-form Black-Scholes, Monte Carlo for European options, and Monte Carlo
+              for up-and-in and down-and-out barrier options.</li>
+            <li>Chose 1,000,000 paths to keep the standard error near $0.02, and 52 weekly time steps so the
+              simulation catches barrier crossings that a single step would miss.</li>
+            <li>Validated the simulation: all three European methods agreed within about $0.02 (Black-Scholes call
+              $8.02, Monte Carlo $8.01).</li>
+            <li>Explained how barrier placement shapes prices. The down-and-out barrier removes the paths that make a
+              put valuable, dropping its price from $7.90 to $0.69.</li>
+            <li>Tested sensitivity to ±10% volatility, finding that knock-out puts lose value as volatility rises,
+              the opposite of a standard option.</li>
+            <li>Estimated the option's Delta with Monte Carlo finite differences (0.5420), within 0.0002 of the
+              analytical value (0.5422).</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Results</h3>
+
+          <ul class="timeline-text timeline-bullets">
+            <li><strong>Time steps matter for barriers.</strong> With one step, the knock-in put priced at $0.00;
+              with 52 steps it priced at $1.74, capturing paths that rise above 110 and then fall back below the
+              $105 strike.</li>
+            <li><strong>Matching Black-Scholes to the cent</strong> takes about 10–16 million paths, or roughly half
+              that with antithetic variates for variance reduction.</li>
+            <li><strong>Choosing the finite-difference step</strong> is a trade-off: too small amplifies simulation
+              noise and too large adds bias. A step of 1 balanced the two.</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Tools</h3>
+
+          <p class="timeline-text">Python, NumPy, Matplotlib, Monte Carlo simulation, Black-Scholes model</p>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

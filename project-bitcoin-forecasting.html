@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin Price Forecasting - Edison Guo</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="project-page">
+
+  <main>
+
+    <div class="main-content">
+
+      <article class="active">
+
+        <a href="./index.html#portfolio" class="project-back-link">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          <span>Back to portfolio</span>
+        </a>
+
+        <header>
+          <h2 class="h2 article-title">Forecasting Bitcoin Price Movements with Classifier Models</h2>
+        </header>
+
+        <p class="project-meta">Team Project · APS1052, University of Toronto</p>
+
+        <figure class="project-page-img">
+          <img src="./assets/images/btc-model-comparison.png"
+            alt="Box plot of cross-validation accuracy for SVC, XGBoost, and LSTM against a 50% random baseline">
+        </figure>
+
+        <section class="project-section">
+          <h3 class="h3">Overview</h3>
+
+          <p class="timeline-text">
+            Built and tested machine learning classifiers that predict whether Bitcoin's price will go up or down the
+            next day, using on-chain blockchain indicators, market sentiment, and macro data alongside standard price
+            signals. The project followed a full quantitative research workflow: leak-free data splits, hyperparameter
+            tuning, a simulated trading backtest, model explainability, and statistical tests for whether the results
+            beat random chance.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">What we built</h3>
+
+          <ul class="timeline-text timeline-bullets">
+            <li>Assembled 3,002 days of Bitcoin price data with S&amp;P 500, gold, and VIX data, the Crypto Fear &amp;
+              Greed Index, and on-chain metrics (hash rate, NVT, MVRV Z-score, Puell Multiple, SOPR).</li>
+            <li>Engineered 17 features, more than half of them non-price, and kept the best 16 using mutual
+              information feature selection.</li>
+            <li>Split the data by date to avoid look-ahead bias: training on the 2018–2021 bull market and testing on
+              the 2022 bear market through the 2024 halving recovery, a genuinely different market regime.</li>
+            <li>Tuned an SVM (four kernels), XGBoost, and a stacked LSTM with time-series cross-validation. The
+              polynomial-kernel SVM scored best at 54.2% cross-validation accuracy.</li>
+            <li>Backtested the SVM as a trading strategy against buy-and-hold, measuring profit factor, CAGR, Sharpe
+              ratio, and final equity.</li>
+            <li>Explained the model with SHAP values and stress-tested it with a White Reality Check and a Monte Carlo
+              permutation test (1,000 samples each).</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Results</h3>
+
+          <p class="timeline-text">
+            The honest result is that the model has no real edge. On the test set it predicted "up" every day, so its
+            equity curve simply tracks buy-and-hold, and test accuracy was 49.3%. Both statistical tests returned a
+            p-value of 1.0, confirming the model does no better than random guessing. Catching that, rather than
+            reporting the attractive training-period returns, was the point of the validation steps.
+          </p>
+
+          <figure class="project-page-img project-page-img-hero">
+            <img src="./assets/images/btc-equity-curves.png"
+              alt="Train and test equity curves where the SVC strategy line overlaps the buy-and-hold line">
+          </figure>
+
+          <p class="timeline-text project-caption">
+            Train and test equity curves. The SVC strategy overlaps buy-and-hold because the model always predicts
+            "up".
+          </p>
+
+          <figure class="project-page-img project-page-img-hero">
+            <img src="./assets/images/btc-shap.png"
+              alt="SHAP feature importance bar chart led by SOPR, NVT, and the Fear and Greed Index">
+          </figure>
+
+          <p class="timeline-text project-caption">
+            SHAP feature importance. The model leaned most on on-chain and sentiment signals (SOPR, NVT, Fear &amp;
+            Greed), though every feature's impact was small.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Tools</h3>
+
+          <p class="timeline-text">Python, scikit-learn, XGBoost, LSTM, SHAP, TimeSeriesSplit cross-validation, Yahoo
+            Finance, Glassnode / CryptoQuant data</p>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
