@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Optimization - Edison Guo</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="project-page">
+
+  <main>
+
+    <div class="main-content">
+
+      <article class="active">
+
+        <a href="./index.html#portfolio" class="project-back-link">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          <span>Back to portfolio</span>
+        </a>
+
+        <header>
+          <h2 class="h2 article-title">Mean-Variance Portfolio Optimization</h2>
+        </header>
+
+        <p class="project-meta">Individual Project · APS502 Financial Engineering I, University of Toronto · Fall 2025</p>
+
+        <figure class="project-page-img">
+          <img src="./assets/images/portfolio-frontier-8asset.png"
+            alt="Efficient frontier chart for the eight-asset portfolio, with and without short selling, and each asset plotted by risk and return">
+        </figure>
+
+        <section class="project-section">
+          <h3 class="h3">Overview</h3>
+
+          <p class="timeline-text">
+            Built mean-variance (Markowitz) optimization models in MATLAB to find the lowest-risk portfolio for a range
+            of target returns. Compared a three-asset portfolio of an S&amp;P 500 ETF, a US Treasury bond ETF, and an
+            emerging markets ETF against an eight-asset portfolio that adds five financial-sector stocks, each with and
+            without short selling, using almost ten years of monthly price data.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">What I did</h3>
+
+          <ul class="timeline-text timeline-bullets">
+            <li>Collected 118 monthly adjusted closing prices (December 2015 to October 2025) from Yahoo Finance for
+              SPY, GOVT, EEMV, CME, BR, CBOE, ICE, and ACN.</li>
+            <li>Computed monthly returns, geometric expected returns, standard deviations, and the covariance matrix
+              for each asset.</li>
+            <li>Formulated the Markowitz model as a quadratic program that minimizes portfolio variance subject to a
+              target return and fully invested weights, and solved it with MATLAB's quadprog across 15 target
+              returns.</li>
+            <li>Generated efficient frontiers for both portfolios, with and without short selling.</li>
+            <li>Found that the eight-asset frontier strictly dominates the three-asset one. Its lowest-risk portfolio
+              has a 0.97% monthly standard deviation, versus 1.41% with three assets.</li>
+            <li>Showed that short selling barely helps with three assets but matters with eight. At the highest target
+              return (1.36% per month), it cut portfolio risk from 4.49% to 2.56% standard deviation.</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Results</h3>
+
+          <figure class="project-page-img">
+            <img src="./assets/images/portfolio-frontier-3asset.png"
+              alt="Efficient frontier chart for the three-asset portfolio of SPY, GOVT, and EEMV, with and without short selling">
+          </figure>
+
+          <p class="timeline-text project-caption">
+            Three-asset efficient frontier. Diversification comes mainly from pairing the bond ETF (GOVT) with the
+            S&amp;P 500 ETF (SPY), and the two frontiers nearly overlap, so short selling adds little.
+          </p>
+
+          <p class="timeline-text">
+            With eight assets (top image), BR, CME, and CBOE become the main return drivers while GOVT stays the
+            low-risk stabilizer. The wider set of assets gives more room to diversify and hedge, which is why the
+            short-selling frontier pulls clearly to the left.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Tools</h3>
+
+          <p class="timeline-text">MATLAB (Optimization Toolbox, quadprog), Excel, Yahoo Finance data, mean-variance
+            optimization</p>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Strategy Backtest - Edison Guo</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="project-page">
+
+  <main>
+
+    <div class="main-content">
+
+      <article class="active">
+
+        <a href="./index.html#portfolio" class="project-back-link">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          <span>Back to portfolio</span>
+        </a>
+
+        <header>
+          <h2 class="h2 article-title">Backtesting Portfolio Construction Strategies on Sector ETFs</h2>
+        </header>
+
+        <p class="project-meta">Individual Project · APS1022, University of Toronto · May 2026</p>
+
+        <figure class="project-page-img">
+          <img src="./assets/images/etf-wealth-12m.png"
+            alt="Cumulative wealth chart for six portfolio strategies from 2020 to 2025, led by Equal Weight and Risk Parity">
+        </figure>
+
+        <section class="project-section">
+          <h3 class="h3">Overview</h3>
+
+          <p class="timeline-text">
+            Compared six portfolio construction methods on the eleven S&amp;P 500 sector ETFs to see which ones hold
+            up out-of-sample once real trading costs are included. Each strategy was rebalanced monthly in a
+            rolling-horizon backtest from 2019 to 2025, using 6, 12, and 24 months of history to estimate its inputs.
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">What I did</h3>
+
+          <ul class="timeline-text timeline-bullets">
+            <li>Built monthly total-return data for the eleven sector ETFs (XLK, XLF, XLE, XLY, XLP, XLV, XLI, XLB,
+              XLU, XLRE, XLC) from 1,787 days of adjusted prices.</li>
+            <li>Implemented six strategies: mean-variance optimization (MVO), robust MVO with box uncertainty (90%,
+              95%, 99%) and ellipsoidal uncertainty, Risk Parity, Equal Weight, and Black-Litterman.</li>
+            <li>Ran rolling-horizon backtests with 6, 12, and 24-month estimation windows, strictly avoiding
+              look-ahead bias.</li>
+            <li>Charged 10 basis points per dollar traded on every rebalance and measured each strategy's turnover
+              and the Sharpe ratio it lost to costs.</li>
+            <li>Compared strategies on net Sharpe and Sortino ratios, maximum drawdown, total return, rolling Sharpe,
+              and portfolio weight heatmaps.</li>
+          </ul>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Results</h3>
+
+          <ul class="timeline-text timeline-bullets">
+            <li><strong>Simple strategies won.</strong> Equal Weight and Risk Parity delivered the best and most
+              consistent net Sharpe ratios across all three windows. With a 12-month window, Equal Weight grew $1 to
+              $2.01.</li>
+            <li><strong>Standard MVO broke down.</strong> Noisy return estimates made its weights swing wildly each
+              month. Trading costs turned its slightly positive Sharpe ratio (0.065) negative (-0.016).</li>
+            <li><strong>Robustness helped, when done right.</strong> The box-uncertainty penalty stabilized MVO,
+              lifting net Sharpe to 0.127 at the 12-month window. The ellipsoidal version did not.</li>
+            <li><strong>Black-Litterman stayed stable.</strong> Anchored to market equilibrium, it matched Equal
+              Weight at the 24-month window (Sharpe 0.273 vs. 0.270) while still expressing an investor's views.</li>
+          </ul>
+
+          <figure class="project-page-img">
+            <img src="./assets/images/etf-wealth-24m.png"
+              alt="Cumulative wealth chart with a 24-month window, where MVO and Robust Ellipsoidal collapse toward zero while other strategies grow">
+          </figure>
+
+          <p class="timeline-text project-caption">
+            Cumulative wealth with a 24-month window. MVO and Robust Ellipsoidal collapse after trading costs, while
+            Equal Weight, Black-Litterman, and Risk Parity grow steadily.
+          </p>
+
+          <figure class="project-page-img">
+            <img src="./assets/images/etf-bl-weights.png"
+              alt="Heatmap of Black-Litterman portfolio weights by sector ETF over time, with a tilt toward XLK">
+          </figure>
+
+          <p class="timeline-text project-caption">
+            Black-Litterman weights over time (12-month window): stable allocations with a tilt toward Technology
+            (XLK) and away from Utilities (XLU).
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h3 class="h3">Tools</h3>
+
+          <p class="timeline-text">Python, Jupyter, portfolio optimization, robust optimization, Black-Litterman,
+            backtesting</p>
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
